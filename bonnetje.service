@@ -1,0 +1,13 @@
+[Unit]
+Description=bonnetje daemon
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/bonnetje-daemon/env
+ExecStart=/usr/local/bin/bonnetje-daemon
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=bonnetje.service
